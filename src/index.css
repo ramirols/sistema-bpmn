@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #000000;
+  --color-secondary: #ffffff;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
