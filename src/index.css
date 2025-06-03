@@ -1,13 +1,21 @@
+html, body {
+  overflow-x: hidden;
+}
+
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #000000;
+  --color-primary: #00B0CA;
   --color-secondary: #ffffff;
 }
 
 .container {
   width: 1200px;
   margin: 0 auto;
+}
+
+.input {
+  @apply border border-gray-300 rounded-md p-2;
 }
 
 @media (max-width: 768px) {
