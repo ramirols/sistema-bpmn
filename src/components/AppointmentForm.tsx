@@ -82,7 +82,7 @@ const AppointmentForm = () => {
             required: 'La hora es requerida',
             validate: (value) => {
               if (!value) return 'La hora es requerida';
-              const [hours, minutes] = value.split(':');
+              const [hours] = value.split(':');
               const hour = parseInt(hours || '0');
               return (hour >= 9 && hour <= 18) || 'El horario debe estar entre 9:00 y 18:00';
             }
