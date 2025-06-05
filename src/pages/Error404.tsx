@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 const Error404 = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b flex items-center justify-center">
+    <div className="min-h-200 bg-gradient-to-b flex items-center justify-center">
       <div className="text-center">
         <motion.h1
           className="text-9xl font-bold text-primary"

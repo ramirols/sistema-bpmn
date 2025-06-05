@@ -11,20 +11,28 @@ const Header = () => {
     setIsOpen(false);
   };
 
+  const menuItems = [
+    { label: "Inicio", path: "/" },
+    { label: "Servicios", path: "/servicios" },
+    { label: "Nosotros", path: "/nosotros" },
+    { label: "Contactanos", path: "/contactanos" },
+  ];
+
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="bg-primary text-white p-4 fixed top-0 left-0 right-0 z-50"
+      className="bg-white text-black p-4 fixed top-0 left-0 right-0 z-50"
     >
-      <nav className="container">
+      <nav className="container mx-auto">
         <div className="flex justify-between items-center">
+          {/* Logo */}
           <motion.h1
-            className="text-xl md:text-2xl font-bold cursor-pointer"
+            className="text-2xl font-bold cursor-pointer text-primary"
             whileHover={{ scale: 1.05 }}
-            onClick={() => navigate('/')}
+            onClick={() => navigate("/")}
           >
-            Consultorio Médico
+            VitalyCare
           </motion.h1>
 
           {/* Botón hamburguesa para móvil */}
@@ -32,7 +40,7 @@ const Header = () => {
             className="md:hidden"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -45,23 +53,33 @@ const Header = () => {
           <AnimatePresence>
             {(isOpen || window.innerWidth >= 768) && (
               <motion.ul
-                className={`md:flex flex-col md:flex-row absolute md:relative top-15 md:top-0 left-0 md:left-auto right-0 md:right-auto bg-primary md:bg-transparent p-4 md:p-0 gap-4 shadow-lg md:shadow-none ${isOpen ? 'border-t-1 border-white' : ''}`}
+                className={`md:flex items-center gap-6 absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto bg-white md:bg-transparent p-4 md:p-0 shadow-lg md:shadow-none ${isOpen ? 'block' : 'hidden'}`}
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <motion.li whileHover={{ scale: 1.1 }}>
-                  <Link to="/" onClick={handleNavClick} className="block py-2 md:py-0 hover:text-gray-200 transition-colors">Inicio</Link>
-                </motion.li>
-                <motion.li whileHover={{ scale: 1.1 }}>
-                  <Link to="/pacientes" onClick={handleNavClick} className="block py-2 md:py-0 hover:text-gray-200 transition-colors">Pacientes</Link>
-                </motion.li>
-                <motion.li whileHover={{ scale: 1.1 }}>
-                  <Link to="/citas" onClick={handleNavClick} className="block py-2 md:py-0 hover:text-gray-200 transition-colors">Citas</Link>
-                </motion.li>
-                <motion.li whileHover={{ scale: 1.1 }}>
-                  <Link to="/reporte" onClick={handleNavClick} className="block py-2 md:py-0 hover:text-gray-200 transition-colors">Reporte</Link>
+                {menuItems.map((item) => (
+                  <motion.li key={item.label} whileHover={{ scale: 1.05 }}>
+                    <Link
+                      to={item.path}
+                      onClick={handleNavClick}
+                      className="block py-2 md:py-0 text-black hover:text-primary transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.li>
+                ))}
+
+                {/* Botón de acción */}
+                <motion.li whileHover={{ scale: 1.05 }}>
+                  <Link
+                    to="/dashboard-inicio"
+                    onClick={handleNavClick}
+                    className="block bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark transition-colors"
+                  >
+                    Reservar una cita
+                  </Link>
                 </motion.li>
               </motion.ul>
             )}

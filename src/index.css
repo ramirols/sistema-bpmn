@@ -1,12 +1,14 @@
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #00B0CA;
-  --color-secondary: #ffffff;
+  --color-primary: #38A4EC;
+  --color-secondary: #19C886;
+  --color-tertiary: #002942;
 }
 
 .container {
@@ -16,6 +18,14 @@ html, body {
 
 .input {
   @apply border border-gray-300 rounded-md p-2;
+}
+
+.swiper-hero-pagination-bullets {
+  @apply w-3 h-3 bg-gray-300 opacity-100 rounded-full mx-1 transition-all;
+}
+
+.swiper-hero-pagination-bullets-active {
+  @apply bg-secondary scale-110;
 }
 
 @media (max-width: 768px) {
