@@ -11,11 +11,13 @@ const contactItems = [
     icon: <FaPhoneAlt size={24} />,
     title: 'LLÁMANOS',
     lines: ['+51 957 271 213'],
+    link: 'tel:+51957271213',
   },
   {
     icon: <FaEnvelope size={24} />,
     title: 'ENVÍANOS UN CORREO',
     lines: ['ramirols.dev@gmail.com'],
+    link: 'mailto:ramirols.dev@gmail.com',
   },
 ];
 
@@ -50,9 +52,9 @@ const InicioContactoSection = () => {
               >
                 <h4 className="font-semibold uppercase mb-2 md:mb-0">{item.title}</h4>
                 {item.lines.map((line, i) => (
-                  <p key={i} className="text-sm leading-tight">
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" key={i} className="text-sm leading-tight">
                     {line}
-                  </p>
+                  </a>
                 ))}
               </motion.div>
               {/* Divider vertical para desktop */}
