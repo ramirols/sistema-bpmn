@@ -49,7 +49,7 @@ const NosotrosSection: FC = () => {
             </p>
           </div>
           <a
-            href="https://wa.me/51999999999"
+            href="https://wa.me/+51957271213?text=¡Hola! Me gustaría recibir más información sobre sus servicios."
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white text-primary px-5 py-2 rounded shadow hover:bg-gray-100 transition"
