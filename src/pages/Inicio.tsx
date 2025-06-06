@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 
-import Hero from '../components/Hero';
-import ContactoSection from '../components/ContactoSection';
-import ServiciosSection from '../components/ServiciosSection';
-import NosotrosSection from '../components/NosotrosSection';
+import Hero from '../components/InicioHero';
+import InicioServiciosSection from '../components/InicioServiciosSection';
+import InicioNosotrosSection from '../components/InicioNosotrosSection';
+import InicioPorqueElegirnosSection from '../components/InicioPorqueElegirnosSection';
+import InicioSpecialtySection from '../components/InicioSpecialtySection';
+import InicioContactoSection from '../components/InicioContactoSection';
 
 const Inicio = () => {
   return (
@@ -13,9 +15,11 @@ const Inicio = () => {
       transition={{ duration: 0.5 }}
     >
       <Hero />
-      <ServiciosSection />
-      <NosotrosSection />
-      <ContactoSection />
+      <InicioServiciosSection />
+      <InicioNosotrosSection />
+      <InicioPorqueElegirnosSection />
+      <InicioSpecialtySection />
+      <InicioContactoSection />
     </motion.div>
   )
 }

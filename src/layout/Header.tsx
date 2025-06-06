@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleNavClick = () => {
     setIsOpen(false);
@@ -64,7 +65,11 @@ const Header = () => {
                     <Link
                       to={item.path}
                       onClick={handleNavClick}
-                      className="block py-2 md:py-0 text-black hover:text-primary transition-colors"
+                      className={`block py-2 md:py-0 transition-colors ${
+                        location.pathname === item.path 
+                          ? "text-primary font-semibold"
+                          : "text-black hover:text-primary"
+                      }`}
                     >
                       {item.label}
                     </Link>
@@ -76,7 +81,9 @@ const Header = () => {
                   <Link
                     to="/dashboard-inicio"
                     onClick={handleNavClick}
-                    className="block bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark transition-colors"
+                    className={`block bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark transition-colors ${
+                      location.pathname === "/dashboard-inicio" ? "bg-primary-dark" : ""
+                    }`}
                   >
                     Reservar una cita
                   </Link>
