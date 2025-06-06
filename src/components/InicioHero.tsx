@@ -52,7 +52,7 @@ const Hero = () => {
                                 </p>
                             </div>
                             <motion.div initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="py-6">
-                                <a href="/sobre-nosotros" className="bg-secondary hover:bg-primary text-white px-6 py-3 rounded-md inline-block transition">
+                                <a href="/nosotros" className="bg-secondary hover:bg-primary text-white px-6 py-3 rounded-md inline-block transition">
                                     Conócenos
                                 </a>
                             </motion.div>
@@ -109,7 +109,7 @@ const Hero = () => {
                                 Descubre cómo podemos fortalecer tu equipo y optimizar el rendimiento en el trabajo a través de nuestro enfoque especializado y personalizado en salud ocupacional.
                             </p>
                             <motion.div initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="py-6">
-                                <a href="/sobre-nosotros" className="bg-secondary hover:bg-primary text-white px-6 py-3 rounded-md inline-block transition">
+                                <a href="/contactanos" className="bg-secondary hover:bg-primary text-white px-6 py-3 rounded-md inline-block transition">
                                     Conócenos
                                 </a>
                             </motion.div>
