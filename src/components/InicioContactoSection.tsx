@@ -5,7 +5,7 @@ const contactItems = [
   {
     icon: <FaMapMarkerAlt size={24} />,
     title: 'UBÍCANOS EN',
-    lines: ['Ca. Argentina 358, el Parral - Comas'],
+    lines: ['Baranco de la Merced 100, San Isidro'],
   },
   {
     icon: <FaPhoneAlt size={24} />,
