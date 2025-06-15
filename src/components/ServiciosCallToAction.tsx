@@ -23,7 +23,9 @@ const ServiciosCallToAction = () => {
                 transition={{ duration: 0.5, delay: 0.3 }}
             >
                 <a 
-                    href="wa.me/+51957271213" 
+                    href="https://wa.me/+51957271213"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="bg-secondary text-white px-6 py-3 md:px-4 md:py-2 rounded-md inline-block text-center"
                 >
                     Escríbenos al WhatsApp
