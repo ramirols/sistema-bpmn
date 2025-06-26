@@ -26,7 +26,7 @@ const Header = () => {
             <nav className="container">
                 <div className="flex justify-between items-center">
                     <motion.h1
-                        className="text-xl md:text-2xl font-bold cursor-pointer"
+                        className="text-xl md:text-2xl font-bold cursor-pointer system-logo"
                         whileHover={{ scale: 1.05 }}
                         onClick={() => navigate('/')}
                     >
@@ -51,7 +51,7 @@ const Header = () => {
                     <AnimatePresence>
                         {(isOpen || window.innerWidth >= 768) && (
                             <motion.ul
-                                className={`md:flex flex-col md:flex-row absolute md:relative top-15 md:top-0 left-0 md:left-auto right-0 md:right-auto bg-primary md:bg-transparent p-4 md:p-0 gap-4 shadow-lg md:shadow-none ${isOpen ? 'border-t-1 border-white' : ''}`}
+                                className={`md:flex flex-col md:flex-row absolute md:relative top-14 md:top-0 left-0 md:left-auto right-0 md:right-auto bg-primary md:bg-transparent p-4 md:p-0 gap-4 shadow-lg md:shadow-none ${isOpen ? 'border-t-1 border-white' : ''}`}
                                 initial={{ opacity: 0, height: 0 }}
                                 animate={{ opacity: 1, height: "auto" }}
                                 exit={{ opacity: 0, height: 0 }}
